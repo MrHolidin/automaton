@@ -21,6 +21,10 @@ std::vector<std::vector<size_t>> get_all_bynary_vectors(size_t len) {
     return ans;
 }
 
+size_t automaton::get_number_of_vertexes() const {
+    return _number_of_vertexes;
+}
+
 size_t automaton::_get_out_vertex(size_t from, char symb) {
     for (auto& edge: _edges[from])
         if (edge.symb == symb)
@@ -214,7 +218,7 @@ bool automaton::valid_string(const std::string& s) {
                     }
                 }
         } else {
-            if (is_finishing(i)) {
+            if (is_finishing(bfs_vec[i].first)) {
                 return true;
             }
         }

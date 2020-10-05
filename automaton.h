@@ -41,6 +41,7 @@ public:
     void make_finish(size_t q);
     automaton get_equivalent_DKA() const;
     automaton get_minimum_DKA();
+    size_t get_number_of_vertexes() const;
     bool valid_string(const std::string& s);
 
     friend std::ostream& operator<<(std::ostream& os, const automaton& x);

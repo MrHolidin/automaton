@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "automaton.h"
+#include <automaton.h>
 #include <iostream>
 
 class AutomatonTestCase : public ::testing::Test {
@@ -60,14 +60,14 @@ TEST_F(AutomatonTestCase, SimpleAutoTest) {
     EXPECT_FALSE(nothing.valid_string("ababa"));
     EXPECT_FALSE(nothing.valid_string(""));
 
-    EXPECT_EQ(cicle.get_number_of_vertexes(), 3);
+    EXPECT_EQ(cicle.get_number_of_vertices(), 3);
     EXPECT_TRUE(cicle.valid_string("aba"));
     EXPECT_TRUE(cicle.valid_string("abc"));
     EXPECT_FALSE(cicle.valid_string("abb"));
 
     EXPECT_TRUE(simpl_auto.valid_string("bab"));
     EXPECT_FALSE(simpl_auto.valid_string("bbbb"));
-    EXPECT_EQ(simpl_auto.get_equivalent_DKA().get_number_of_vertexes(), 4);
+    EXPECT_EQ(simpl_auto.get_equivalent_DKA().get_number_of_vertices(), 4);
 }
 
 TEST_F(AutomatonTestCase, DeterminizationAutoTest) {
@@ -77,7 +77,7 @@ TEST_F(AutomatonTestCase, DeterminizationAutoTest) {
     EXPECT_FALSE(hard_auto.valid_string("abaaa"));
     EXPECT_FALSE(d_hard_auto.valid_string("abaaa"));
 
-    EXPECT_EQ(d_hard_auto.get_number_of_vertexes(), 2);
+    EXPECT_EQ(d_hard_auto.get_number_of_vertices(), 2);
 
     EXPECT_TRUE(d_inv_auto.valid_string("abaaa"));
     EXPECT_FALSE(d_inv_auto.valid_string("ab"));

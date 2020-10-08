@@ -6,7 +6,7 @@ std::ostream& operator<<(std::ostream& os, const _edge& x) {
 }
 
 std::ostream& operator<<(std::ostream& os, const automaton& x) {
-    os << "|Q| = " << x._number_of_vertexes << "\n";
+    os << "|Q| = " << x._number_of_vertices << "\n";
     os << "q0 = " << x._start << "\n";
     os << "|F| = " << x._finish.size() << "\n";
     os << "Finish: ";
